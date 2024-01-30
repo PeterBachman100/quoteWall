@@ -3,31 +3,43 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Quote Wall Generator</title>
+	<title>Quote Wall</title>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
 	<script type="module" src="quoteGenerator.js"></script>
 	<link rel="stylesheet" href="./quoteWall.css"/>
 </head>
 <body>
-	<button id="menu-toggle">Menu</button>
-	<div id="menu" class="hidden-menu">
-		<div class="upload-container">
-			<label for="upload" class="upload-label">Upload Excel File</label>
-			<input type="file" id="upload" accept=".xlsx, .xls" class="upload-input" />
+	<div class="hamburger-menu">
+		<input id="menu__toggle" type="checkbox" />
+		<label class="menu__btn" for="menu__toggle">
+		  <span></span>
+		</label>
+	
+		<div class="menu__box">
+			<div>
+				<h3>Add Quotes</h3>
+				<div class="upload-container">
+					  <label for="upload" class="upload-label">From Excel File: </label>
+					  <input type="file" id="upload" accept=".xlsx, .xls" class="upload-input" />
+				  </div>
+				  <div class="input-container">
+					  <span>Insert Manually: </span>
+					  <input type="text" id="new-quote" placeholder="Enter quote" />
+					  <input type="text" id="quote-source" placeholder="Quote source" />
+					  <button id="add-quote-btn">Add Quote</button>
+				  </div>
+			</div>
+			
+			<hr>
+			
+		    <div>
+				<h3>Download Quotes</h3>
+				<button id="download-btn">As an Array (.txt)</button>
+				<button id="download-xlsx-btn">As an Excel Sheet (.xlsx)</button>
+				<button id="export-html-btn">Export your Quote Wall as a saved web page (.html)</button>
+			</div>
 		</div>
-		<div class="input-container">
-			<input type="text" id="new-quote" placeholder="Enter quote" />
-			<input type="text" id="quote-source" placeholder="Quote source" />
-			<button id="add-quote-btn">Add Quote</button>
-		</div>
-		<button id="download-btn">Download Quotes as Array (.txt)</button>
-		<button id="download-xlsx-btn">Download Quotes as Excel Sheet (.xlsx)</button>
-		<button id="export-html-btn">Export your Quote Wall as a saved web page (HTML)</button>
 	</div>
-	
-	
-	
-
 	<div id="quote-container"></div>
 </body>
 </html>

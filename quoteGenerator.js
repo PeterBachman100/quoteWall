@@ -119,26 +119,28 @@ function addNewQuote() {
 
 		// Clear input fields
 		document.getElementById('new-quote').value = '';
-		documentdocument.getElementById('download-xlsx-btn').addEventListener('click', downloadExcel);
 		
-		function downloadExcel() {
-			const quotes = Array.from(document.querySelectorAll('.quote-card')).map(card => {
-				const text = card.querySelector('blockquote').textContent;
-				const author = card.querySelector('cite').textContent;
-				return [text, author];
-			});
-		
-			const worksheet = XLSX.utils.aoa_to_sheet(quotes);
-			const workbook = XLSX.utils.book_new();
-			XLSX.utils.book_append_sheet(workbook, worksheet, "Quotes");
-		
-			// Writing the file
-			XLSX.writeFile(workbook, "quotes.xlsx");
-		}
-.getElementById('quote-source').value = '';
+		document.getElementById('quote-source').value = '';
 	} else {
 		alert("Please fill in both the quote and the source.");
 	}
+}
+
+document.getElementById('download-xlsx-btn').addEventListener('click', downloadExcel);
+
+function downloadExcel() {
+	const quotes = Array.from(document.querySelectorAll('.quote-card')).map(card => {
+		const text = card.querySelector('blockquote').textContent;
+		const author = card.querySelector('cite').textContent;
+		return [text, author];
+	});
+
+	const worksheet = XLSX.utils.aoa_to_sheet(quotes);
+	const workbook = XLSX.utils.book_new();
+	XLSX.utils.book_append_sheet(workbook, worksheet, "Quotes");
+
+	// Writing the file
+	XLSX.writeFile(workbook, "quotes.xlsx");
 }
 
 document.getElementById('export-html-btn').addEventListener('click', exportAsHTML);

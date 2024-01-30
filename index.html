@@ -9,8 +9,17 @@
 	<link rel="stylesheet" href="./quoteWall.css"/>
 </head>
 <body>
-	<p>Upload quotes from an Excel sheet</p>
-	<input type="file" id="upload" accept=".xlsx, .xls" />
+	<div class="upload-container">
+		<label for="upload" class="upload-label">Upload Excel File</label>
+		<input type="file" id="upload" accept=".xlsx, .xls" class="upload-input" />
+	</div>
+	<button id="download-btn">Download Quotes as .txt</button>
+	<div class="input-container">
+		<input type="text" id="new-quote" placeholder="Enter quote" />
+		<input type="text" id="quote-source" placeholder="Quote source" />
+		<button id="add-quote-btn">Add Quote</button>
+	</div>
+
 	<div id="quote-container"></div>
 </body>
 </html>

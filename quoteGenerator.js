@@ -119,8 +119,121 @@ function addNewQuote() {
 
 		// Clear input fields
 		document.getElementById('new-quote').value = '';
-		document.getElementById('quote-source').value = '';
+		documentdocument.getElementById('download-xlsx-btn').addEventListener('click', downloadExcel);
+		
+		function downloadExcel() {
+			const quotes = Array.from(document.querySelectorAll('.quote-card')).map(card => {
+				const text = card.querySelector('blockquote').textContent;
+				const author = card.querySelector('cite').textContent;
+				return [text, author];
+			});
+		
+			const worksheet = XLSX.utils.aoa_to_sheet(quotes);
+			const workbook = XLSX.utils.book_new();
+			XLSX.utils.book_append_sheet(workbook, worksheet, "Quotes");
+		
+			// Writing the file
+			XLSX.writeFile(workbook, "quotes.xlsx");
+		}
+.getElementById('quote-source').value = '';
 	} else {
 		alert("Please fill in both the quote and the source.");
 	}
 }
+
+document.getElementById('export-html-btn').addEventListener('click', exportAsHTML);
+
+function exportAsHTML() {
+	const quotes = Array.from(document.querySelectorAll('.quote-card')).map(card => {
+		const text = card.querySelector('blockquote').textContent;
+		const author = card.querySelector('cite').textContent;
+		return `["${text}", "${author}"]`;
+	});
+
+	const quotesArrayString = `const quotesArray = [\n  ${quotes.join(',\n  ')}\n];`;
+
+	const htmlContent = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Exported Quotes</title>
+	<style>
+		#quote-container {
+			margin: 20px;
+			padding: 20px;
+			columns: 30rem auto; /* Default setting for larger screens */
+		}
+
+		.quote-card {
+			background-color: white;
+			border-radius: 10px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+			padding: 15px;
+			margin-bottom: 20px;
+			display: inline-block;
+			width: 100%;
+			box-sizing: border-box;
+		}
+
+		.quote-card blockquote {
+			font-family: 'Georgia', serif;
+			font-size: 18px;
+			margin: 0;
+			padding: 0;
+		}
+
+		.quote-card cite {
+			display: block;
+			font-size: 16px;
+			text-align: left;
+			margin-top: 5px;
+			font-style: italic;
+		}
+
+		@media (max-width: 1000px) {
+			#quote-container {
+				columns: 20rem auto; /* Column width set to 20rem for smaller screens */
+			}
+		}
+	</style>
+</head>
+<body>
+	<div id="quote-container"></div>
+
+	<script>
+		${quotesArrayString}
+
+		document.addEventListener('DOMContentLoaded', () => {
+			const quoteContainer = document.getElementById('quote-container');
+			
+			quotesArray.forEach(quotePair => {
+				const card = document.createElement('div');
+				card.className = 'quote-card';
+				const quoteElement = document.createElement('blockquote');
+				quoteElement.textContent = quotePair[0];
+				const sourceElement = document.createElement('cite');
+				sourceElement.textContent = quotePair[1];
+				card.appendChild(quoteElement);
+				card.appendChild(sourceElement);
+				quoteContainer.appendChild(card);
+			});
+		});
+	</script>
+</body>
+</html>
+	`;
+
+	const blob = new Blob([htmlContent], { type: 'text/html' });
+	const url = URL.createObjectURL(blob);
+
+	const a = document.createElement('a');
+	a.href = url;
+	a.download = 'exported_quotes.html';
+	a.style.display = 'none';
+	document.body.appendChild(a);
+	a.click();
+	document.body.removeChild(a);
+	URL.revokeObjectURL(url);
+}
+

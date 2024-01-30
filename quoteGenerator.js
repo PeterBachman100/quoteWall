@@ -239,3 +239,22 @@ function exportAsHTML() {
 	URL.revokeObjectURL(url);
 }
 
+document.getElementById('menu-toggle').addEventListener('click', function() {
+	document.getElementById('menu').classList.toggle('show-menu');
+});
+
+// Optional: Close menu when clicking outside
+window.addEventListener('click', function(e) {
+	const menu = document.getElementById('menu');
+	if (!menu.contains(e.target) && !e.target.matches('#menu-toggle')) {
+		menu.classList.remove('show-menu');
+	}
+});
+
+// Optional: Close button inside menu
+// Add a button with id 'close-menu' inside your menu div for this to work
+document.getElementById('close-menu').addEventListener('click', function() {
+	document.getElementById('menu').classList.remove('show-menu');
+});
+
+

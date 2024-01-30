@@ -4,8 +4,11 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Quote Wall Generator</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
 </head>
 <body>
+	<p>Upload quotes from an Excel sheet</p>
+	<input type="file" id="upload" accept=".xlsx, .xls" />
 	<div id="quote-container"></div>
 	<style>
 		#quote-container {
@@ -115,6 +118,44 @@
 			});
 
 		});
+		
+		//handle upload
+		document.getElementById('upload').addEventListener('change', handleFileSelect, false);
+		
+		function handleFileSelect(event) {
+			const reader = new FileReader();
+			reader.onload = (event) => {
+				const data = new Uint8Array(event.target.result);
+				const workbook = XLSX.read(data, {type: 'array'});
+				const firstSheetName = workbook.SheetNames[0];
+				const worksheet = workbook.Sheets[firstSheetName];
+				const json = XLSX.utils.sheet_to_json(worksheet, {header: 1});
+				const quotes = json.map(row => ({ text: row[0], author: row[1] }));
+		
+				// Clear existing quotes
+				const quoteContainer = document.getElementById('quote-container');
+				quoteContainer.innerHTML = '';
+		
+				// Append new quotes
+				quotes.forEach(quotePair => {
+					const card = document.createElement('div');
+					card.className = 'quote-card';
+		
+					const quoteElement = document.createElement('blockquote');
+					quoteElement.textContent = quotePair.text;
+		
+					const sourceElement = document.createElement('cite');
+					sourceElement.textContent = quotePair.author;
+		
+					card.appendChild(quoteElement);
+					card.appendChild(sourceElement);
+					quoteContainer.appendChild(card);
+				});
+			};
+			reader.readAsArrayBuffer(event.target.files[0]);
+		}
+
+
 	</script>
 	
 </body>

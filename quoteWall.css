@@ -1,0 +1,38 @@
+	#quote-container {
+		margin: 20px;
+		padding: 20px;
+		columns: 30rem auto; /* Default setting for larger screens */
+	}
+	
+	.quote-card {
+		background-color: white;
+		border-radius: 10px;
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		padding: 15px;
+		margin-bottom: 20px;
+		display: inline-block;
+		width: 100%;
+		box-sizing: border-box;
+	}
+	
+	.quote-card blockquote {
+		font-family: 'Georgia', serif;
+		font-size: 18px;
+		margin: 0;
+		padding: 0;
+	}
+	
+	.quote-card cite {
+		display: block;
+		font-size: 16px;
+		text-align: left;
+		margin-top: 5px;
+		font-style: italic;
+	}
+	
+	/* Media query for screens narrower than 1000px */
+	@media (max-width: 1000px) {
+		#quote-container {
+			columns: 20rem auto; /* Column width set to 20rem for smaller screens */
+		}
+	}

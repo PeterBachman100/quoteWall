@@ -16,27 +16,25 @@
 		</label>
 	
 		<div class="menu__box">
-			<div>
-				<h3>Add Quotes</h3>
-				<div class="upload-container">
-					  <label for="upload" class="upload-label">From Excel File: </label>
-					  <input type="file" id="upload" accept=".xlsx, .xls" class="upload-input" />
-				  </div>
-				  <div class="input-container">
-					  <span>Insert Manually: </span>
-					  <input type="text" id="new-quote" placeholder="Enter quote" />
-					  <input type="text" id="quote-source" placeholder="Quote source" />
-					  <button id="add-quote-btn">Add Quote</button>
-				  </div>
-			</div>
-			
-			<hr>
-			
-		    <div>
-				<h3>Download Quotes</h3>
-				<button id="download-btn">As an Array (.txt)</button>
-				<button id="download-xlsx-btn">As an Excel Sheet (.xlsx)</button>
-				<button id="export-html-btn">Export your Quote Wall as a saved web page (.html)</button>
+			<div class="menu-container">
+				<p><strong>Add Quotes</strong></p>
+					<div class="input-container">
+						<input type="text" id="new-quote" placeholder="Enter quote..." />
+						<input type="text" id="quote-source" placeholder="Quote source..." />
+						<button id="add-quote-btn">Add Quote to Wall</button>
+					</div>
+				    <div class="upload-container">
+						<label for="upload" class="upload-label"><p>Replace quotes with list from Excel file: </p></label>
+						<input type="file" id="upload" accept=".xlsx, .xls" class="upload-input" />
+					</div>
+			</div>			
+		    <div class="menu-container">
+				<p><strong>Download Quotes</strong></p>
+				<div class="export-container">
+					<button id="download-btn">As an Array (.txt)</button>
+					<button id="download-xlsx-btn">As an Excel Sheet (.xlsx)</button>
+					<button id="export-html-btn">Export your Quote Wall as a saved web page (.html)</button>
+				</div>
 			</div>
 		</div>
 	</div>

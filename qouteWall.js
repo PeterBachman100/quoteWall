@@ -68,29 +68,6 @@ function handleFileSelect(event) {
 	reader.readAsArrayBuffer(event.target.files[0]);
 }
 
-document.getElementById('download-btn').addEventListener('click', downloadQuotes);
-
-function downloadQuotes() {
-	const quotes = Array.from(document.querySelectorAll('.quote-card')).map(card => {
-		const text = card.querySelector('blockquote').textContent;
-		const author = card.querySelector('cite').textContent;
-		return `["${text}", "${author}"]`;
-	});
-
-	const data = `const quotesArray = [\n  ${quotes.join(',\n  ')}\n];`;
-	const blob = new Blob([data], { type: 'text/plain' });
-	const url = URL.createObjectURL(blob);
-	
-	const a = document.createElement('a');
-	a.href = url;
-	a.download = 'quotes.txt';
-	a.style.display = 'none';
-	document.body.appendChild(a);
-	a.click();
-	document.body.removeChild(a);
-	URL.revokeObjectURL(url);
-}
-
 document.getElementById('add-quote-btn').addEventListener('click', addNewQuote);
 
 function addNewQuote() {

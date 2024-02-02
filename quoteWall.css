@@ -10,6 +10,7 @@
 		padding: 0px;
 		box-sizing: border-box;
 		font-family: 'Georgia', serif;
+		font-size: 16px;
 	}
 	
 	body {
@@ -71,18 +72,17 @@
 	  left: -100%;
 	  width: auto;
 	  height: auto;
-	  margin: 0;
-	  padding-top: 40px;
-	  padding-left: 4px;
-	  list-style: none;
+	  margin-top: 40px;
 	  transition: .25s ease;
+	  backdrop-filter: blur(5px);
 	}
 	
 	.input-container, .upload-container, .export-container {
 		margin: 16px 8px;
 		padding: 4px 8px;
 		border-radius: 4px;
-		background-color: var(--light-card-color);
+		background-color: #000000;
+		color: var(--light-bg-color);
 		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 	}
 	
@@ -104,10 +104,12 @@
 		background-color: #dadada;
 	}
 	
+	.upload-label {
+	}
+	
 	input[type="file"] {
 		border: none;
 		font-family: 'Georgia', serif;
-		width: 185px;
 		&::file-selector-button {
 			background-color: var(--light-bg-color);
 			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

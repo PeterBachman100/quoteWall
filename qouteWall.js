@@ -54,7 +54,8 @@ function handleFileSelect(event) {
 		const firstSheetName = workbook.SheetNames[0];
 		const worksheet = workbook.Sheets[firstSheetName];
 		const json = XLSX.utils.sheet_to_json(worksheet, {header: 1});
-		const quoteList = json.map(row => ({ text: row[0], author: row[1] }));
+		
+		const quoteList = json.map(row => [row[0], row[1]]);
 
 		// Clear existing quotes
 		const quoteContainer = document.getElementById('quote-container');

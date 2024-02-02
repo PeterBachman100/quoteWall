@@ -36,7 +36,7 @@
 	  transform: rotate(90deg);
 	}
 	#menu__toggle:checked ~ .menu__box {
-	  top: 0 !important;
+	  left: 0 !important;
 	}
 	.menu__btn {
 	  position: fixed;
@@ -66,30 +66,24 @@
 	  top: 8px;
 	}
 	.menu__box {
-	  display: flex;
-	  flex-wrap: wrap;
-	  gap: 12px;
 	  position: fixed;
-	  top: -100%;
-	  width: 100%;
+	  top: 0;
+	  left: -100%;
+	  width: auto;
 	  height: auto;
 	  margin: 0;
-	  padding: 48px 8px 8px 8px;
+	  padding-top: 40px;
+	  padding-left: 4px;
 	  list-style: none;
-	  background-color: var(--light-bg-color);
-	  box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
-	  transition-duration: .25s;
-	}
-	.menu-container {
-		padding: 8px;
-		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-		border-radius: 8px;
-		flex-grow: 1;
-		background-color: var(--light-card-color)
+	  transition: .25s ease;
 	}
 	
-	.menu-container p, .input-container, .upload-container, .export-container {
-		padding: 4px;
+	.input-container, .upload-container, .export-container {
+		margin: 16px 8px;
+		padding: 4px 8px;
+		border-radius: 4px;
+		background-color: var(--light-card-color);
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 	}
 	
 	input[type="text"], button {
@@ -113,6 +107,7 @@
 	input[type="file"] {
 		border: none;
 		font-family: 'Georgia', serif;
+		width: 185px;
 		&::file-selector-button {
 			background-color: var(--light-bg-color);
 			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

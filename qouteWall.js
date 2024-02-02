@@ -221,6 +221,15 @@ function exportAsHTML() {
 		document.addEventListener('DOMContentLoaded', () => {
 			const quoteContainer = document.getElementById('quote-container');
 			
+			function shuffleArray(array) {
+				for (let i = array.length - 1; i > 0; i--) {
+					const j = Math.floor(Math.random() * (i + 1));
+					[array[i], array[j]] = [array[j], array[i]];
+				}
+			}
+			
+			shuffleArray(quotesArray);
+			
 			quotesArray.forEach(quotePair => {
 				const card = document.createElement('div');
 				card.className = 'quote-card';

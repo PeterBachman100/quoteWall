@@ -191,6 +191,7 @@
 		font-size: 16px;
 		margin: 0;
 		padding: 0;
+		line-height: 2;
 	}
 	
 	.quote-card cite {

@@ -128,6 +128,7 @@
 			font-size: 16px;
 			margin: 0;
 			padding: 0;
+			line-height: 2;
 		}
 		
 		.quote-card cite {
@@ -147,8 +148,15 @@
 			}
 		}
 
-		.highlight {
+		.highlight-01 {
 			border: 2px solid #FFD700;
+		}
+		.highlight-05 {
+			border: 1px solid #000 ;
+		}
+		.highlight-10 {
+			border: 1px solid #fff;
+			
 		}
 </style>
 <script>
@@ -168,8 +176,15 @@
 		const card = document.createElement('div');
 		card.className = 'quote-card';
 		
-		if(Math.random() < 0.05) {
-			card.classList.add('highlight');
+		const randomNum = Math.random();
+		if(randomNum < 0.01) {
+			card.classList.add('highlight-01');
+		}
+		else if (randomNum < 0.05) {
+			card.classList.add('highlight-05');
+		}
+		else if(randomNum < 0.10) {
+			card.classList.add('highlight-10');
 		}
 		
 		const quoteElement = document.createElement('blockquote');

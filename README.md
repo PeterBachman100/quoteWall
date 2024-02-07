@@ -5,7 +5,7 @@
 There are a few design elements to reduce habituation and help you remember to read these qoutes:
 - The array is shuffled every time the page is refreshed.
 - The colors alternately shift from light to dark.
-- Random quotes are highlighted.
+- Random quotes are highlighted with varying chances and colors. Some only show up when the screen is dark and some only when it is light.
 
 # Usage
 The simplest usage is to download the file "quoteWallLocal.html" and save it to your documents. You can edit the array of quotes in the <head> of the document to customize your quote wall, and open the file locally.

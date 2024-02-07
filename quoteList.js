@@ -1,4 +1,4 @@
-const quoteList = ["The desire of the sluggard kills him, for his hands refuse to labor. All day long he craves and craves, but the righteous gives and does not hold back.", "‭‭Proverbs‬ ‭21‬:‭25‬-‭26‬ ‭"],
+const quoteList = [["The desire of the sluggard kills him, for his hands refuse to labor. All day long he craves and craves, but the righteous gives and does not hold back.", "‭‭Proverbs‬ ‭21‬:‭25‬-‭26‬ ‭"],
   ["Gracious words are like a honeycomb, sweetness to the soul and health to the body.", "‭‭Proverbs‬ ‭16‬:‭24‬"],
   ["Nevertheless, I am continually with you; you hold my right hand. You guide me with your counsel, and afterward you will receive me to glory. Whom have I in heaven but you? And there is nothing on earth that I desire besides you. My flesh and my heart may fail, but God is the strength of my heart and my portion forever.", "‭‭Psalm‬ ‭73‬:‭23‬-‭26‬"],
   ["In all toil there is profit, but mere talk tends only to poverty.", "‭‭Proverbs‬ ‭14‬:‭23‬"],

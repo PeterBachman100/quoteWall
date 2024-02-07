@@ -16,6 +16,17 @@ function createAndAppendQuote(quotePair, quoteContainer) {
 	const card = document.createElement('div');
 	card.className = 'quote-card';
 	
+	const randomNum = Math.random();
+	if(randomNum < 0.01) {
+		card.classList.add('highlight-01');
+	}
+	else if (randomNum < 0.05) {
+		card.classList.add('highlight-05');
+	}
+	else if(randomNum < 0.10) {
+		card.classList.add('highlight-10');
+	}
+	
 	const quoteElement = document.createElement('blockquote');
 	quoteElement.textContent = quoteText;
 	

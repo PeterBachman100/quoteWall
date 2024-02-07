@@ -1,5 +1,4 @@
-const quoteList = [
-  ["The desire of the sluggard kills him, for his hands refuse to labor. All day long he craves and craves, but the righteous gives and does not hold back.", "‭‭Proverbs‬ ‭21‬:‭25‬-‭26‬ ‭"],
+const quoteList = ["The desire of the sluggard kills him, for his hands refuse to labor. All day long he craves and craves, but the righteous gives and does not hold back.", "‭‭Proverbs‬ ‭21‬:‭25‬-‭26‬ ‭"],
   ["Gracious words are like a honeycomb, sweetness to the soul and health to the body.", "‭‭Proverbs‬ ‭16‬:‭24‬"],
   ["Nevertheless, I am continually with you; you hold my right hand. You guide me with your counsel, and afterward you will receive me to glory. Whom have I in heaven but you? And there is nothing on earth that I desire besides you. My flesh and my heart may fail, but God is the strength of my heart and my portion forever.", "‭‭Psalm‬ ‭73‬:‭23‬-‭26‬"],
   ["In all toil there is profit, but mere talk tends only to poverty.", "‭‭Proverbs‬ ‭14‬:‭23‬"],
@@ -30,7 +29,20 @@ const quoteList = [
   ["The fear of the Lord is a fountain of life, that one may turn away from the snares of death.", "‭‭Proverbs‬ ‭14‬:‭27‬"],
   ["Without the aid of trained emotions the intellect is powerless against the animal organism.", "C.S. Lewis, The Abolition of Man"],
   ["As the king governs by his executive, so Reason in man must rule the mere appetites by means of the ‘spirited element’. The head rules the belly through the chest—the seat, as Alanus tells us, of Magnanimity, of emotions organized by trained habit into stable sentiments. The Chest-Magnanimity-Sentiment—these are the indispensable liaison officers between cerebral man and visceral man. It may even be said that it is by this middle element that man is man: for by his intellect he is mere spirit and by his appetite mere animal.", "C.S. Lewis, The Abolition of Man"],
-  ["We must not listen to those who advise us 'being men to think human thoughts, and being mortal to think mortal thoughts' but must put on immortality as much as possible and strain every nerve to live according to that best part of us, which, being small in bulk, yet much more in its power and honour surpasses all else.", "Aristotle, The Nicomachean Ethics"]
+  ["We must not listen to those who advise us 'being men to think human thoughts, and being mortal to think mortal thoughts' but must put on immortality as much as possible and strain every nerve to live according to that best part of us, which, being small in bulk, yet much more in its power and honour surpasses all else.", "Aristotle, The Nicomachean Ethics"],
+  ["Without the aid of trained emotions the intellect is powerless against the animal organism.", "C.S. Lewis, The Abolition of Man"],
+  ["A man without self-control is like a city broken into and left without walls.", "Proverbs 25:28"],
+  ["Do you see a man who is wise in his own eyes? There is more hope for a fool than for him.", "Proverbs 26:12"],
+  ["The prudent sees danger and hides himself, but the simple go on and suffer for it.", "Proverbs 27:12"],
+  ["He who trusts his own heart is a fool, but he who walks in wisdom will be delivered.", "Proverbs 28:26"],
+  ["A fool gives full vent to his spirit, but a wise man quietly holds it back.", "Proverbs 29:11"],
+  ["No man knows how bad he is till he has tried very hard to be good.", "C.S. Lewis"],
+  ["Humility, after the first shock, is a cheerful virtue.", "C.S. Lewis"],
+  ["I have been trying to make the reader believe that we actually are, at present, creatures whose character must be, in some respects, a horror to God, as it is, when we really see it, a horror to ourselves. This I believe to be a fact: and I notice that the holier a man is, the more fully he is aware of that fact.", "C.S. Lewis"],
+  ["Plato rightly taught that virtue is one. You cannot be kind unless you have all the other virtues. If, being cowardly, conceited, and slothful, you have never yet done a fellow creature great mischief, that is only because your neighbour's welfare has not yet happened to conflict with your safety, self-approval, or ease. Every vice leads to cruelty.", "C.S. Lewis"],
+  ["It would seem that Our Lord finds our desires not too strong, but too weak. We are half-hearted creatures, fooling about with drink and sex and ambition when infinite joy is offered us, like an ignorant child who wants to go on making mud pies in a slum because he cannot imagine what is meant by the offer of a holiday at the sea. We are far too easily pleased.", "C.S. Lewis"],
+  ["The price good men pay for indifference to public affairs is to be ruled by evil men.", "Plato"],
+  ["The first and best victory is to conquer self.", "Plato"],
 ];
 
 export default quoteList;

@@ -21,8 +21,8 @@
 	
 	@keyframes colorCycleBackground {
 		0% { background-color: var(--light-bg); }
-		45% { background-color: var(--light-bg); }
-		55% { background-color: var(--dark-bg); }
+		15% { background-color: var(--light-bg); }
+		85% { background-color: var(--dark-bg); }
 		100% { background-color: var(--dark-bg); }
 	}
 	

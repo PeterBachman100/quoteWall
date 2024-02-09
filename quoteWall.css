@@ -21,22 +21,22 @@
 	
 	@keyframes colorCycleBackground {
 		0% { background-color: var(--light-bg); }
-		15% { background-color: var(--light-bg); }
-		85% { background-color: var(--dark-bg); }
+		45% { background-color: var(--light-bg); }
+		55% { background-color: var(--dark-bg); }
 		100% { background-color: var(--dark-bg); }
 	}
 	
 	@keyframes colorCycleCards {
 		0% { background-color: var(--light-card); }
-		45% { background-color: var(--light-card); }
-		55% { background-color: var(--dark-card); }
+		47% { background-color: var(--light-card); }
+		53% { background-color: var(--dark-card); }
 		100% { background-color: var(--dark-card); }
 	}
 	
 	@keyframes colorCycleText {
 		0% { color: var(--dark-text); }
-		45% { color: var(--dark-text); }
-		55% { color: var(--light-text); }
+		47% { color: var(--dark-text); }
+		53% { color: var(--light-text); }
 		100% { color: var(--light-text); }
 	}
 	
